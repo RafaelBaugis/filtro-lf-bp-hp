@@ -56,8 +56,8 @@ def calculate():
         capacitance = 1 / (4 * math.pi ** 2 * frequency_initial ** 2 * R1 * R2 / (R1 + R2) ** 2 - ((1 / (2 * math.pi * frequency_initial)) ** 2 / capacitance) * ((1 / (2 * math.pi * frequency_final)) ** 2 / capacitance))
         inductance = math.sqrt(((1 / (2 * math.pi * frequency_initial)) ** 2 / capacitance) * ((1 / (2 * math.pi * frequency_final)) ** 2 / capacitance))
 
-    inductance_str = "Indutância: {:.2f} H".format(inductance)
-    capacitance_str = "Capacitância: {:.2f} F".format(capacitance)
+    inductance_str = "Indutância: {:.2f} uH".format(inductance*1000000)
+    capacitance_str = "Capacitância: {:.2f} uF".format(capacitance*1000000)
 
     result_label.config(text=inductance_str + "\n" + capacitance_str)
 
